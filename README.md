@@ -1,7 +1,8 @@
+# Firehose를 이용하여 Data Lake에 데이터 적재 연습
 
 ## 1. EC2 로그가 저장될 디렉토리 설정
 
-```
+```sh
 mkdir /tmp/clickstream-log
 chmod 777 /tmp/clickstream-log
 ```
@@ -16,7 +17,7 @@ curl이나 wget을 이용하여, `Download raw file` 버튼에서 주어지는 �
 
 ## 4. Amazon Linux에 aws-kinesis-agent를 설치
 
-```
+```sh
 yum install aws-kinesis-agent
 ```
 
@@ -30,7 +31,7 @@ yum install aws-kinesis-agent
 
 `/etc/aws-kinesis/agent.json` 파일을 다음과 같이 수정
 
-```
+```json
 {
   "cloudwatch.emitMetrics": true,
   "kinesis.endpoint": "",
@@ -51,7 +52,7 @@ yum install aws-kinesis-agent
 클릭스트림이 생성되는 EC2에 IAM 역할이 없다면, aws-kinesis-agent는 권한 에러를 발생시킴. 
 따라서 다음 사용자 정의 정책을 추가한 후, 이를 활용하는 역할을 추가해야 함
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
