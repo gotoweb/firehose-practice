@@ -1,6 +1,6 @@
 # Firehose를 이용하여 Data Lake에 데이터 적재 연습
 
-## 1. EC2 로그가 저장될 디렉토리 설정
+## 1. EC2 상에서, 클릭스트림 로그가 저장될 디렉토리 설정
 
 ```sh
 mkdir /tmp/clickstream-log
